@@ -1,0 +1,87 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="brand">
+
+      <div class="logo">
+        <img src="agave.png" alt="Agave" class="agave-icon" />
+      </div>
+
+      <h1>
+        Tequilería Chavelita
+      </h1>
+
+      <p class="slogan">
+        100% AGAVE 100% ENTREGA
+      </p>
+
+      <p class="subtitle">
+        Sistema de administración
+      </p>
+
+    </div>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="login()"
+    >
+
+      <div class="field">
+
+        <label>
+          Correo electrónico
+        </label>
+
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="usuario@tequileria.com"
+        />
+
+      </div>
+
+      <div class="field">
+
+        <label>
+          Contraseña
+        </label>
+
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="••••••••"
+        />
+
+      </div>
+
+      @if (error()) {
+        <div class="error">
+          {{ error() }}
+        </div>
+      }
+
+      <button
+        type="submit"
+        class="login-button"
+        [disabled]="loading()"
+      >
+        @if (loading()) {
+          Entrando...
+        } @else {
+          Iniciar sesión
+        }
+      </button>
+
+      <a
+        routerLink="/register"
+        class="register-button"
+      >
+        Registrarse
+      </a>
+
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,91 @@
+<div class="register-page">
+
+  <div class="register-card">
+
+    <h1>
+      Registro
+    </h1>
+
+    <p>
+      Crear una cuenta en Café Soled
+    </p>
+
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+    >
+
+      <div class="field">
+
+        <label>
+          Nombre
+        </label>
+
+        <input
+          type="text"
+          formControlName="fullName"
+        />
+
+      </div>
+
+      <div class="field">
+
+        <label>
+          Correo
+        </label>
+
+        <input
+          type="email"
+          formControlName="email"
+        />
+
+      </div>
+
+      <div class="field">
+
+        <label>
+          Contraseña
+        </label>
+
+        <input
+          type="password"
+          formControlName="password"
+        />
+
+      </div>
+
+      <div class="field">
+
+        <label>
+          ID de empleado
+        </label>
+
+        <input
+          type="number"
+          formControlName="empleado_id"
+        />
+
+      </div>
+
+      @if (error()) {
+        <p class="error">
+          {{ error() }}
+        </p>
+      }
+
+      <button
+        type="submit"
+        [disabled]="loading()"
+      >
+        Crear cuenta
+      </button>
+
+      <a routerLink="/login">
+        Volver al inicio de sesión
+      </a>
+
+    </form>
+
+  </div>
+
+</div>

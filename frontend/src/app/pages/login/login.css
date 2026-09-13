@@ -1,0 +1,182 @@
+:host {
+  display: block;
+}
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Fondo Verde Agave Claro */
+  background-color: #e2ece9;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 520px;
+
+  background-color: white;
+
+  padding: 45px 48px;
+
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(45, 87, 44, 0.1);
+
+  box-sizing: border-box;
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.logo {
+  margin-bottom: 10px;
+}
+
+.agave-icon {
+  width: 75px;
+  height: auto;
+  display: inline-block;
+}
+
+.brand h1 {
+  margin: 0;
+
+  /* Verde Obscuro para el título */
+  color: #1e3f20;
+
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.slogan {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  color: #3b7a57;
+
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  margin-top: 2px;
+
+  color: #666666;
+
+  font-size: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 22px;
+}
+
+.field label {
+  margin-bottom: 9px;
+
+  color: #234024;
+
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.field input {
+  width: 100%;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #bccebe;
+  border-radius: 11px;
+
+  /* Fondo ligeramente verde menta */
+  background-color: #f4f8f5;
+
+  font-size: 16px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #2d572c;
+  background-color: #ffffff;
+}
+
+.login-button {
+  width: 100%;
+
+  padding: 15px;
+
+  margin-top: 3px;
+
+  border: none;
+  border-radius: 11px;
+
+  /* Verde Agave Principal */
+  background-color: #2d572c;
+  color: white;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #1e3f20;
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+}
+
+.register-button {
+  display: block;
+
+  width: 100%;
+
+  padding: 14px;
+  margin-top: 12px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+  text-decoration: none;
+
+  border: 1px solid #2d572c;
+  border-radius: 11px;
+
+  background-color: white;
+  color: #2d572c;
+
+  font-size: 17px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.register-button:hover {
+  background-color: #eef5f0;
+}
+
+.error {
+  margin-bottom: 15px;
+
+  padding: 10px;
+
+  border-radius: 7px;
+
+  background-color: #ffe5e5;
+  color: #a51d1d;
+
+  text-align: center;
+}

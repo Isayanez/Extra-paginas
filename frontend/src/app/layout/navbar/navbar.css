@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e3f20; /* Verde obscuro agave */
+  padding: 15px 30px;
+  color: white;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  width: 32px;
+  height: auto;
+}
+
+.brand-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links a {
+  color: #cfebd2;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #e2ece9;
+}
+
+.logout-btn {
+  background-color: #2d572c;
+  color: white;
+  border: 1px solid #488246;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #3b7a57;
+}

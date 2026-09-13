@@ -1,0 +1,65 @@
+<app-navbar />
+
+<div class="products-container">
+  <h2>Catálogo de Tequilas</h2>
+  <p class="subtitle">Haz clic en cualquier producto para ver su detalle.</p>
+
+  @if (loading()) {
+    <p>Cargando productos...</p>
+  } @else if (error()) {
+    <div class="error-message">{{ error() }}</div>
+  } @else {
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Disponible (Stock)</th>
+          <th>Precio</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products(); track product.id) {
+          <tr class="product-row" (click)="openDetail(product)">
+            <td><strong>{{ product.nombre }}</strong></td>
+            <td>{{ product.stock }} piezas</td>
+            <td>${{ product.precio }}</td>
+            <td>
+              <button class="btn-detail" (click)="openDetail(product); $event.stopPropagation()">
+                Ver detalle
+              </button>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4">No hay productos disponibles.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
+
+<!-- Ventana Modal de Detalle -->
+@if (selectedProduct(); as product) {
+  <div class="modal-overlay" (click)="closeDetail()">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeDetail()">&times;</button>
+      
+      <div class="modal-body">
+        <div class="modal-image-container">
+          <img [src]="product.image || 'agave.png'" [alt]="product.nombre" class="product-modal-img" />
+        </div>
+
+        <div class="modal-info">
+          <h3>{{ product.nombre }}</h3>
+          <p class="product-price">${{ product.precio }}</p>
+          <div class="divider"></div>
+          <h4>Descripción:</h4>
+          <p class="product-description">{{ product.description || 'Producto artesanal de Tequilería Chavelita.' }}</p>
+          <p class="product-stock"><strong>Disponibles:</strong> {{ product.stock }} piezas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+}
